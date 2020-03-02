@@ -1,0 +1,44 @@
+[root@ip-172-31-10-254 docker]# docker info
+Containers: 0
+ Running: 0
+ Paused: 0
+ Stopped: 0
+Images: 12
+Server Version: 18.09.9-ce
+Storage Driver: overlay2
+ Backing Filesystem: xfs
+ Supports d_type: true
+ Native Overlay Diff: true
+Logging Driver: json-file
+Cgroup Driver: cgroupfs
+Plugins:
+ Volume: local
+ Network: bridge host macvlan null overlay
+ Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+Swarm: inactive
+Runtimes: runc
+Default Runtime: runc
+Init Binary: docker-init
+containerd version: 894b81a4b802e4eb2a91d1ce216b8817763c29fb
+runc version: 2b18fe1d885ee5083ef9f0838fee39b62d653e30
+init version: fec3683
+Security Options:
+ seccomp
+  Profile: default
+Kernel Version: 4.14.165-131.185.amzn2.x86_64
+Operating System: Amazon Linux 2
+OSType: linux
+Architecture: x86_64
+CPUs: 1
+Total Memory: 983.4MiB
+Name: ip-172-31-10-254.us-west-1.compute.internal
+ID: Z5C7:XNBH:DCML:HMQN:BOIF:TRCJ:RHDP:EAA2:EIVX:PUHP:6HYH:L2VL
+Docker Root Dir: /var/lib/docker
+Debug Mode (client): false
+Debug Mode (server): false
+Registry: https://index.docker.io/v1/
+Labels:
+Experimental: false
+Insecure Registries:
+ 127.0.0.0/8
+Live Restore Enabled: false

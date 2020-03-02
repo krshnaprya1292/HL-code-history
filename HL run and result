@@ -1,0 +1,178 @@
+ 1  su
+    2  ssh -i "27feb.pem" ec2-user@ec2-54-153-13-15.us-west-1.compute.amazonaws.com
+    3  docker --version
+	 service docker start
+	 
+	 install docker-compose : https://docs.docker.com/compose/install/
+		sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+		sudo chmod +x /usr/local/bin/docker-compose
+		sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+		$ docker-compose --version
+		docker-compose version 1.25.4, build 1110ad01
+
+	
+
+    4  yum install curl
+    5  curl google.com
+    6  clear
+    7  npm install --global windows-build-tools
+    8  yum install node
+    9  yum install npm
+   10  curl -sSL http://bit.ly/2ysbOFE | bash -s    ----------------------
+   instead go to go to /root/fabric-samples/bin----------- run install.sh
+   11  List out hyperledger docker images
+   12  hyperledger/fabric-ca          1.4                 3b96a893c1e4        43 hours ago        150MB
+   13  hyperledger/fabric-ca          1.4.6               3b96a893c1e4        43 hours ago        150MB
+   14  hyperledger/fabric-ca          latest              3b96a893c1e4        43 hours ago        150MB
+   15  hyperledger/fabric-tools       2.0                 639ab50feac9        4 weeks ago         514MB
+   16  hyperledger/fabric-tools       2.0.0               639ab50feac9        4 weeks ago         514MB
+   17  hyperledger/fabric-tools       latest              639ab50feac9        4 weeks ago         514MB
+   18  hyperledger/fabric-peer        2.0                 5f8a6b13db9f        4 weeks ago         57.2MB
+   19  hyperledger/fabric-peer        2.0.0               5f8a6b13db9f        4 weeks ago         57.2MB
+   20  hyperledger/fabric-peer        latest              5f8a6b13db9f        4 weeks ago         57.2MB
+   21  hyperledger/fabric-orderer     2.0                 161632cc3c59        4 weeks ago         39.7MB
+   22  hyperledger/fabric-orderer     2.0.0               161632cc3c59        4 weeks ago         39.7MB
+   23  hyperledger/fabric-orderer     latest              161632cc3c59        4 weeks ago         39.7MB
+   24  hyperledger/fabric-ccenv       2.0                 6514ca872b68        4 weeks ago         529MB
+   25  hyperledger/fabric-ccenv       2.0.0               6514ca872b68        4 weeks ago         529MB
+   26  hyperledger/fabric-ccenv       latest              6514ca872b68        4 weeks ago         529MB
+   27  hyperledger/fabric-baseos      2.0                 50075bc26291        4 weeks ago         6.9MB
+   28  hyperledger/fabric-baseos      2.0.0               50075bc26291        4 weeks ago         6.9MB
+   29  hyperledger/fabric-baseos      latest              50075bc26291        4 weeks ago         6.9MB
+   30  hyperledger/fabric-javaenv     2.0                 ac433f4353e4        4 weeks ago         507MB
+   31  hyperledger/fabric-javaenv     2.0.0               ac433f4353e4        4 weeks ago         507MB
+   32  hyperledger/fabric-javaenv     latest              ac433f4353e4        4 weeks ago         507MB
+   33  hyperledger/fabric-nodeenv     2.0                 c7fe428889ec        5 weeks ago         274MB
+   34  hyperledger/fabric-nodeenv     2.0.0               c7fe428889ec        5 weeks ago         274MB
+   35  hyperledger/fabric-nodeenv     latest              c7fe428889ec        5 weeks ago         274MB
+   36  hyperledger/fabric-zookeeper   0.4                 ede9389347db        3 months ago        276MB
+   37  hyperledger/fabric-zookeeper   0.4.18              ede9389347db        3 months ago        276MB
+   38  hyperledger/fabric-zookeeper   latest              ede9389347db        3 months ago        276MB
+   39  hyperledger/fabric-kafka       0.4                 caaae0474ef2        3 months ago        270MB
+   40  hyperledger/fabric-kafka       0.4.18              caaae0474ef2        3 months ago        270MB
+   41  hyperledger/fabric-kafka       latest              caaae0474ef2        3 months ago        270MB
+   42  hyperledger/fabric-couchdb     0.4                 d369d4eaa0fd        3 months ago        261MB
+   43  hyperledger/fabric-couchdb     0.4.18              d369d4eaa0fd        3 months ago        261MB
+   44  hyperledger/fabric-couchdb     latest              d369d4eaa0fd        3 months ago        261MB
+   
+   images are stored in /var/lib/docker/overlay2
+
+[root@ip-172-31-10-254 fabric-samples]# ls
+balance-transfer  bin        chaincode-docker-devmode  CODE_OF_CONDUCT.md  config           fabcar         high-throughput      LICENSE         off_chain_data  scripts
+basic-network     chaincode  ci                        commercial-paper    CONTRIBUTING.md  first-network  interest_rate_swaps  MAINTAINERS.md  README.md       SECURITY.md
+
+[root@ip-172-31-10-254 bin]# ls
+configtxgen  configtxlator  cryptogen  discover  fabric-ca-client  fabric-ca-server  fabric-samples  idemixgen  orderer  peer
+
+
+cd /root/fabric-samples/fabcar
+
+	./startFabric.sh javascript
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   45  ls
+   46  cd bin
+   47  ls
+   48  pwd
+   49  export PATH=/root/bin/bin:$PATH
+   50  echo $PATH
+   
+   go to fabric-samples/first-network
+		./byfn.sh down
+		y
+		docker rm -f $(docker ps -aq)
+		docker rmi -f $(docker images | grep fabcar | awk '{print $3}')
+		
+   51  curl -sS https://raw.githubusercontent.com/hyperledger/fabric/master/scripts/bootstrap.sh -o ./scripts/bootstrap.sh
+   52  vi byfn.sh
+   53  ./byfn.sh
+   54  sudo ./byfn.sh
+   55  ./byfn.sh down
+   56  sudo ./byfn.sh down
+   57  ls
+   58  cd fabric-ca-server
+   59  git config --global user.name "kp"
+   60  yum install git -y
+   61  git config --global user.name "kp"
+   62  git config --global user.email "krishnapriya.1292@gmail.com"
+   63  mkdir git_environment
+   64  cd git_environment
+   65  git clone https://github.com/hyperledger/fabric-samples
+   66  ls
+   67  cd fabric-samples
+   68  ls
+   69  curl -sSL http://bit.ly/2ysbOFE | bash -s
+   70  curl -sSL http://bit.ly/2ysbOFE | bash -s -- 1.4.6 1.4.6 0.4.18
+   71  pwd
+   72  export PATH=/root/bin/git_environment/fabric-samples/bin:$PATH
+   73  echo $PATH
+   74  ls
+   75  vi fabcar
+   76  cd fabcar
+   77  ls
+   78  startFabric.sh
+   79  cd ..
+   80  ./startFabric.sh
+   81  cd fabcar
+   82  ls
+   83  ./startFabric.sh
+   84  ./byfn.sh down
+   85  sudo ./byfn.sh down
+   86  cd ..
+   87  sudo ./byfn.sh down
+   88  ./byfn.sh down
+   89  docker rm -f $(docker ps -aq)
+   90  docker rmi -f $(docker images | grep fabcar | awk '{print $3}')
+   91  ls
+   92  cd fabcar
+   93  ./startFabric.sh javascript
+   94  yum install javascript
+   95  ls
+   96  ./startFabric.sh javascript
+   97  npm install
+   98  ./startFabric.sh java
+   99  cd ..
+  100  ls
+  101  cd fabric-samples
+  102  ls
+  103  cd fabcar
+  104  ls
+  105  ./startFabric.sh javascript-low-level
+  106  ./startFabric.sh javascript
+  107  ./startFabric.sh javascript >> output.txt
+  108  vi output.txt \
+  109  vi output.txt
+  110  rpm -qa | grep -i docker
+  111  yum install docker-compose
+  112  ls
+  113  vi startFabric.sh
+  114  ./startFabric.sh javascript
+  115  pwd
+  116  ls
+  117  find /root/bin/git_environment/fabric-samples -name byfn.sh
+  118  vi /root/bin/git_environment/fabric-samples/first-network/byfn.sh
+  119  sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  120  sudo chmod +x /usr/local/bin/docker-compose
+  121  docker-compose --version
+  122  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  123  docker-compose --version
+  124  ./startFabric.sh javascript
+  125  ./startFabric.sh javascript &
+  126  history >> history.txt
+  127  vi hi
+  128  vi history.txt
+  129  history
+-
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

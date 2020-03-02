@@ -1,0 +1,65 @@
+HL Steps:
+	Launch an instance in aws 
+	$ ssh -i "27feb.pem" ec2-user@ec2-54-219-149-87.us-west-1.compute.amazonaws.com
+	$sudo -i
+	yum install python - y
+	python install pip
+	yum install docker - y
+	yum install docker-compose - y
+	yum install curl - y
+
+https://hyperledger-fabric.readthedocs.io/en/release-1.4/prereqs.html
+Pre requisites :
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+	
+git config --global core.autocrlf false
+git config --global core.longpaths true
+	
+Before running any git clone commands, run the following commands:
+
+git config --global core.autocrlf false
+git config --global core.longpaths true
+You can check the setting of these parameters with the following commands:
+
+git config --get core.autocrlf
+git config --get core.longpaths
+These need to be false and true respectively.
+
+npm install --global windows-build-tools
+npm install --global grpc
+
+
+Git Cloning : 
+curl -sSL http://bit.ly/2ysbOFE | bash -s
+curl -sSL http://bit.ly/2ysbOFE | bash -s -- <fabric_version> <fabric-ca_version> <thirdparty_version>
+curl -sSL http://bit.ly/2ysbOFE | bash -s -- 1.4.6 1.4.6 0.4.18
+
+The command will execute bash file(bootstrap.sh) and extract all of the platform-specific binaries 
+you will need to set up your network and place them into the cloned repo you created above. 
+It retrieves the following platform-specific binaries:
+configtxgen,
+configtxlator,
+cryptogen,
+discover,
+idemixgen
+orderer,
+peer, and
+fabric-ca-client
+and places them in the bin sub-directory of the current working directory.
+
+pwd
+/root
+ls
+fabric-samples
+cd fabric-samples
+ls
+	balance-transfer  bin        chaincode-docker-devmode  CODE_OF_CONDUCT.md  config           fabcar         high-throughput      LICENSE         off_chain_data  scripts
+	basic-network     chaincode  ci                        commercial-paper    CONTRIBUTING.md  first-network  interest_rate_swaps  MAINTAINERS.md  README.md       SECURITY.md
+cd bin
+ls
+	configtxgen  configtxlator  cryptogen  discover  fabric-ca-client  fabric-ca-server  idemixgen  orderer  peer
+	
+export PATH=<path to download location>/bin:$PATH
+export PATH=root/bin:$PATH
+
